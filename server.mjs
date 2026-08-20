@@ -1,0 +1,1 @@
+import express from'express';import{gateways}from'./domain.mjs';const d=gateways(),a=express();a.get('/health',(_,r)=>r.json({status:'ok',routes:d.items.length}));a.listen(Number(process.env.GATEWAY_PORT)||22200,'0.0.0.0');
